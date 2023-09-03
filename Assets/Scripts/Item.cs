@@ -4,34 +4,42 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    //•¡”ƒAƒCƒeƒ€‚ÌÀ‘•
-    //•K—v‚ÈƒAƒCƒeƒ€‚ğ—ñ‹“Œ^
+    // è¤‡æ•°ã‚¢ã‚¤ãƒ†ãƒ ã®å®Ÿè£…
+    // å¿…è¦ãªã‚¢ã‚¤ãƒ†ãƒ ã‚’åˆ—æŒ™ã™ã‚‹
     public enum ItemType
     {
-        Leaf,
-        Key,
-        sample
-            
+        Leaf = 0,
+        Key = 1,
+        Sample = 2,
+
     }
+    
+    public ItemType item; // ï¿½ï¿½ï¿½ÌƒAï¿½Cï¿½eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚Ì‚ï¿½
 
-    public ItemType item;
+    // ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½ê‚½ï¿½ï¿½Aï¿½ï¿½\ï¿½ï¿½ï¿½É‚È‚ï¿½ï¿½ÄƒAï¿½Cï¿½eï¿½ï¿½Boxï¿½É’Ç‰ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    // ï¿½^ï¿½Cï¿½~ï¿½ï¿½ï¿½Oï¿½Fï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½ê‚½ï¿½ï¿½
+    // ï¿½ï¿½ï¿½ï¿½ï¿½F
+    // ï¿½Eï¿½ï¿½\ï¿½ï¿½
+    // ï¿½Eï¿½Aï¿½Cï¿½eï¿½ï¿½Boxï¿½Ö’Ç‰ï¿½
 
-    //ƒNƒŠƒbƒN‚³‚ê‚½‚ç”ñ•\¦‚É‚µ‚ÄƒAƒCƒeƒ€BOX‚Ö’Ç‰Á‚·‚é
-    //ƒ^ƒCƒ~ƒ“ƒOFƒNƒŠƒbƒN‚³‚ê‚½
-    //ˆ—F
-    //      -”ñ•\¦
-    //      -ƒAƒCƒeƒ€BOX‚Ö’Ç‰Á
-
-
-
-    public void OnClickThis()
+    private void Start()
     {
-        gameObject.SetActive(false);
-
-        //ItemBox‚Ö’Ç‰Á
-        ItemBox.instance.SetItem(item);
-
+        // ï¿½Zï¿½[ï¿½uï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½mï¿½Fï¿½ï¿½ï¿½ÄAï¿½ï¿½ï¿½Å‚Éï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½Îï¿½ï¿½ï¿½
+        bool hasThisItem = SaveManager.instance.GetItemData(item);
+        if (hasThisItem == true)
+        {
+            gameObject.SetActive(false);
+            ItemBox.instance.SetItem(item);
+        }
     }
 
 
+    // ï¿½^ï¿½Cï¿½~ï¿½ï¿½ï¿½Oï¿½Fï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½ê‚½ï¿½ï¿½
+    public void OnThis()
+    {
+        // ï¿½Eï¿½ï¿½\ï¿½ï¿½
+        gameObject.SetActive(false);
+        // ï¿½Aï¿½Cï¿½eï¿½ï¿½Boxï¿½Ö’Ç‰ï¿½
+        ItemBox.instance.SetItem(item);
+    }
 }

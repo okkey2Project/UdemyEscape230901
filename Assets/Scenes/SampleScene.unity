@@ -864,7 +864,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 661152251}
         m_TargetAssemblyTypeName: Item, Assembly-CSharp
-        m_MethodName: OnClickThis
+        m_MethodName: OnThis
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2539,7 +2539,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2097157144}
         m_TargetAssemblyTypeName: Item, Assembly-CSharp
-        m_MethodName: OnClickThis
+        m_MethodName: OnThis
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
